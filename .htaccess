@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteBase /
+
+# Allow direct access to PHP files in src/api directory
+RewriteCond %{REQUEST_URI} ^/src/api/.*\.php$
+RewriteRule ^ - [L]
+
+# If the file/directory exists, use it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]

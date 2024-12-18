@@ -1,0 +1,15 @@
+RewriteEngine On
+
+# Hapus public dari URL
+RewriteCond %{REQUEST_URI} ^/public
+RewriteRule ^public/(.*)$ /$1 [L,R=301]
+
+# Jika bukan file atau direktori yang ada, arahkan ke index.php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Izinkan akses ke assets
+<FilesMatch "\.(css|js|jpg|jpeg|png|gif|ico)$">
+    Allow from all
+</FilesMatch> 

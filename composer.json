@@ -1,0 +1,28 @@
+{
+    "name": "wellbe/health-app",
+    "description": "Aplikasi gaya hidup sehat WellBe",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "mongodb/mongodb": "^1.12",
+        "vlucas/phpdotenv": "^5.5",
+        "ext-mongodb": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "WellBe\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "WellBe Team",
+            "email": "team@wellbe.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+} 
